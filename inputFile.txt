@@ -1,0 +1,5 @@
+int j = 12 / 3 * 5;
+int i = 5;
+def foo(int i, int j) {
+	print (i + j);
+}
