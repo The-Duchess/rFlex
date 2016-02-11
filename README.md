@@ -6,11 +6,13 @@ rFlex is a lexical analysis library built in ruby
 
 **Install**
 
-> \>gem install rFlex
+> gem install rFlex
 
 or
 
-> \>gem install rFlex-0.1.0.gem
+> git clone https://github.com/The-Duchess/rFlex
+> cd rflex/rflexGem
+> gem install rFlex-0.1.0.gem
 
 **Example**
 
@@ -40,7 +42,7 @@ or
 
 **Example Input File**
 
-> [inputFile]()
+> [inputFile](https://github.com/The-Duchess/rFlex/blob/master/inputFile.txt)
 
 int j = 12 / 3 * 5;
 int i = 5;
@@ -50,7 +52,7 @@ def foo(int i, int j) {
 
 **Example Regexps File**
 
-> [regexpsFile]()
+> [regexpsFile](https://github.com/The-Duchess/rFlex/blob/master/regexpsFile.txt)
 
 ignore     {[ \t\n]+}
 assignment {^=}
@@ -70,3 +72,7 @@ mul        {^\*}
 sub        {^\-}
 div        {^\/}
 identifier {^[a-zA-Z]\w*}
+
+# COPYING
+
+See [COPYING](https://github.com/The-Duchess/rFlex/blob/master/COPYING.md)

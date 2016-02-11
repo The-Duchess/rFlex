@@ -1,13 +1,3 @@
-#! /bin/env ruby
-#
-############################################################
-# Author: Alice "Duchess" Archer
-# Copyright (c) 2016 under the MIT License
-# see COPYING.md for full copyright
-# Name: rFlex
-# Description: lexical analysis library
-############################################################
-
 class TokenLexer
 	def initialize type, regexp
 		@type = type
