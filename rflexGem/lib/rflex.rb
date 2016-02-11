@@ -107,22 +107,28 @@ class LexicalAnalyzer
 		input = input[0..-2].to_s
 
 		len = @lexers.length - 1
+		j = 0
 
 		matched = false
 
 		until input.length == 0
 			0.upto(len) do |i|
+
 				if @lexers[i].lex(input)
 					matched = true
 				else
-					matched = false
 				end
+				j = i
+			end
 
-				if i == len and matched != false
-					puts "\n\nUnconsumed Input: #{input}\n                      ^\n\n"
-					abort
-				end
-
+			# if we tried all options
+			# and
+			# we didn't match
+			# and
+			# there is remaining input
+			if j == len and matched == false and input.length != 0
+				puts "\n\nUnconsumed Input:\n\n#{input}\n\n"
+				abort
 			end
 
 			matched = false

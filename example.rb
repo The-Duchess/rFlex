@@ -1,4 +1,4 @@
-require 'rFlex'
+require 'rflex'
 
 def main
 	lexertemp = LexicalAnalyzer.new(ARGV[0].to_s, ARGV[1].to_s)
@@ -17,14 +17,6 @@ def main
 	puts "------------------------------------------------------------------------------"
 
 	lexertemp.lex
-
-	puts "------------------------------------------------------------------------------"
-	puts "lexemes"
-	puts "------------------------------------------------------------------------------"
-
-	lexertemp.lexers.each do |lexer|
-	#	puts "#{lexer.type} #{lexer.regexp}"
-	end
 
 end
 
