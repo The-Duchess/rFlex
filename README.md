@@ -25,8 +25,8 @@ or
 
 	lexer = LexicalAnalyzer.new(ARGV[0].to_s, ARGV[1].to_s)
 
-	lexer.lexers.each do |lexer|
-		lexer.do :lex do |token, regexp, type|
+	lexer.lexers.each do |lexerT|
+		lexerT.do :lex do |token, regexp, type|
 			if type != "ignore"
 				puts "lexeme: #{type} | value: #{token}"
 				puts "-------~-----~--~------~---~-------~----~------------~---~------------~-----"
