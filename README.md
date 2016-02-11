@@ -38,7 +38,7 @@ or
 ```
 **Demonstration**
 
-[!Alttext](http://i.imgur.com/5EIsmxM.png)
+![Alttext](http://i.imgur.com/5EIsmxM.png)
 
 **Example Input File**
 
