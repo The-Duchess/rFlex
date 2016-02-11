@@ -2,6 +2,12 @@
 
 rFlex is a lexical analysis library built in ruby
 
+version 0.1.1
+
+# changelog
+
+0.1.1 fixes and issue with unconsumed input
+
 # Library Documentation
 
 **Install**
