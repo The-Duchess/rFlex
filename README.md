@@ -6,7 +6,7 @@ version 0.1.1
 
 # changelog
 
-0.1.1 fixes and issue with unconsumed input
+0.1.1 and 0.1.2 fix an issue with unconsumed input
 
 # Library Documentation
 
