@@ -1,3 +1,13 @@
+#! /bin/env ruby
+#
+############################################################
+# Author: Alice "Duchess" Archer
+# Copyright (c) 2016 under the MIT License
+# see COPYING.md for full copyright
+# Name: rFlex
+# Description: lexical analysis library
+############################################################
+
 class TokenLexer
 	def initialize type, regexp
 		@type = type
@@ -12,9 +22,8 @@ class TokenLexer
 	end
 
 	def lex input
+
 		if token = input.slice!(@regexp)
-			# print "token: #{token} input: "
-			# puts "#{input}"
 			if @block != nil
 				analyze(token, @regexp, @type)
 			end
@@ -45,7 +54,6 @@ class LexicalAnalyzer
 	def initialize file, config
 		@types = {}
 		@typeList = []
-		@unmatchedTokens = []
 		@file = file
 		@streamTokens = []
 		@lexers = []
@@ -98,14 +106,26 @@ class LexicalAnalyzer
 
 		input = input[0..-2].to_s
 
+		len = @lexers.length - 1
+
+		matched = false
+
 		until input.length == 0
-			matched = @lexers.each do |lexer|
-				if lexer.lex(input)
-					# do nothing
+			0.upto(len) do |i|
+				if @lexers[i].lex(input)
+					matched = true
+				else
+					matched = false
 				end
+
+				if i == len and matched != false
+					puts "\n\nUnconsumed Input: #{input}\n                      ^\n\n"
+					abort
+				end
+
 			end
 
-			raise "\n\nUnconsumed Input: #{input}\n                    ^\n\n" unless matched
+			matched = false
 		end
 	end
 

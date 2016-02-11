@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'rFlex'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.date        = '2016-02-10'
   s.summary     = "rflex"
   s.description = "ruby lexical analysis library"

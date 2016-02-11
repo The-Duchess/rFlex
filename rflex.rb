@@ -22,9 +22,8 @@ class TokenLexer
 	end
 
 	def lex input
+
 		if token = input.slice!(@regexp)
-			# print "token: #{token} input: "
-			# puts "#{input}"
 			if @block != nil
 				analyze(token, @regexp, @type)
 			end
@@ -107,14 +106,26 @@ class LexicalAnalyzer
 
 		input = input[0..-2].to_s
 
+		len = @lexers.length - 1
+
+		matched = false
+
 		until input.length == 0
-			matched = @lexers.each do |lexer|
-				if lexer.lex(input)
-					# do nothing
+			0.upto(len) do |i|
+				if @lexers[i].lex(input)
+					matched = true
+				else
+					matched = false
 				end
+
+				if i == len and matched != false
+					puts "\n\nUnconsumed Input: #{input}\n                      ^\n\n"
+					abort
+				end
+
 			end
 
-			raise "\n\nUnconsumed Input: #{input}\n                    ^\n\n" unless matched
+			matched = false
 		end
 	end
 

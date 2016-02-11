@@ -14,7 +14,7 @@ or
 
 > cd rflex/rflexGem
 
-> gem install rFlex-0.1.0.gem
+> gem install rFlex-0.1.1.gem
 
 
 **Example**
