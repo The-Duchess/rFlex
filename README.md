@@ -11,12 +11,16 @@ rFlex is a lexical analysis library built in ruby
 or
 
 > git clone https://github.com/The-Duchess/rFlex
+
 > cd rflex/rflexGem
+
 > gem install rFlex-0.1.0.gem
+
 
 **Example**
 
 ```ruby
+
 	require 'rFlex'
 
 	lexer = LexicalAnalyzer.new(ARGV[0].to_s, ARGV[1].to_s)
@@ -96,5 +100,7 @@ identifier {^[a-zA-Z]\w*}
 
 
 # COPYING
+
+Published under the MIT License
 
 See [COPYING](https://github.com/The-Duchess/rFlex/blob/master/COPYING.md)
