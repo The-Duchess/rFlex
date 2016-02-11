@@ -48,55 +48,10 @@ or
 
 > [inputFile](https://github.com/The-Duchess/rFlex/blob/master/inputFile.txt)
 
-int j = 12 / 3 * 5;
-
-int i = 5;
-
-def foo(int i, int j) {
-
-  print (i + j);
-
-}
 
 **Example Regexps File**
 
 > [regexpsFile](https://github.com/The-Duchess/rFlex/blob/master/regexpsFile.txt)
-
-ignore     {[ \t\n]+}
-
-assignment {^=}
-
-terminal   {^;}
-
-openBrace  {^\{}
-
-closeBrace {^\}}
-
-def        {^def}
-
-openArg    {^\(}
-
-closeArg   {^\)}
-
-comma      {^,}
-
-PRINT      {^print}
-
-INT        {^int}
-
-int        {^\d+}
-
-comment    {^\/\*.*\*\/}
-
-add        {^\+}
-
-mul        {^\*}
-
-sub        {^\-}
-
-div        {^\/}
-
-identifier {^[a-zA-Z]\w*}
 
 
 # COPYING
