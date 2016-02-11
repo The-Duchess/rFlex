@@ -55,7 +55,6 @@ class LexicalAnalyzer
 	def initialize file, config
 		@types = {}
 		@typeList = []
-		@unmatchedTokens = []
 		@file = file
 		@streamTokens = []
 		@lexers = []
