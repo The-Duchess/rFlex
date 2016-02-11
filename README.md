@@ -41,7 +41,7 @@ or
 	lexer.lex
 ```
 
-**Usage in example**
+**Usage in demonstration**
 
 > ruby .\example.rb .\inputFile.txt .\regexpxFile.txt
 
