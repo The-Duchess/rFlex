@@ -40,6 +40,11 @@ or
 
 	lexer.lex
 ```
+
+**Usage in example**
+
+> ruby .\example.rb .\inputFile.txt .\regexpxFile.txt
+
 **Demonstration**
 
 ![Alttext](http://i.imgur.com/5EIsmxM.png)
