@@ -5,8 +5,6 @@
 # options
 # usage: ruby rubyLexer.rb <file> <config>
 
-require 'Win32/Console/ANSI'
-
 class Lexer
 	def initialize file, config
 		@types = {}
@@ -106,7 +104,7 @@ def main
 
 	lexertemp.getStream.each do |token|
 		if token[:type] == "number"
-			print "#{prfxo}#{token[:value]}#{pstfx}"
+			print "[#{prfxo}#{token[:value]}#{pstfx}]"
 		else
 			print token[:value]
 		end
