@@ -1,5 +1,13 @@
 # rFlex
 
+additionally I have provided another lexer that demonstrates a lexical analyzer since the first one is having issues.
+
+to use it
+
+> ruby .\rubyLexer.rb file config
+
+and you will see a line of text with the numbers highlighted. this example requires the win32console gem for winodws prior to 10.
+
 rFlex is a lexical analysis library built in ruby
 
 version 0.1.1
