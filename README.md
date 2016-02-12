@@ -1,5 +1,7 @@
 # rFlex
 
+additionally I have provided another lexer that demonstrates a lexical analyzer since the first one is having issues.
+
 rFlex is a lexical analysis library built in ruby
 
 version 0.1.1
