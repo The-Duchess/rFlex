@@ -6,7 +6,7 @@ to use it
 
 > ruby .\rubyLexer.rb file config
 
-and you will see a line of text with the colors highlighted. this example requires the win32console gem.
+and you will see a line of text with the colors highlighted. this example requires the win32console gem for winodws prior to 10.
 
 rFlex is a lexical analysis library built in ruby
 
