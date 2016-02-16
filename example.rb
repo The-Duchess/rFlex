@@ -12,22 +12,12 @@ def main
 
 		if lexerT.type == "number"
 			lexerT.do :lex do |token, regexp, type|
-				print "{\n num  => #{$i}"
-				print "\n  token => \'#{prfxo}#{token}#{pstfx}\'\n"
-				print "  type  => #{type}\n"
-				print "}\n"
-				#print "["
-				#print $i
-				#print "]"
-				#print "[#{prfxo}#{token}#{pstfx}]"
+				print "#{prfxo}#{token}#{pstfx}"
 				$i += 1
 			end
 		else
 			lexerT.do :lex do |token, regexp, type|
-				print "{\n num  => #{$i}"
-				print "\n  token => \'#{token}\'\n"
-				print "  type  => #{type}\n"
-				print "}\n"
+				print "#{token}"
 				$i += 1
 			end
 		end
