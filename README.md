@@ -53,7 +53,7 @@ or
 
 > ruby .\example.rb .\inputFile.txt .\regexpxFile.txt
 
-** other usage examples**
+**other usage examples**
 
 requires the win32console gem for windows prior to 10.
 
