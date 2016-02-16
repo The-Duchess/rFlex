@@ -30,7 +30,7 @@ or
 
 > cd rflex/rflexGem
 
-> gem install rFlex-0.1.1.gem
+> gem install rFlex-0.1.3.gem
 
 
 **Example**
