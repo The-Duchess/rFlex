@@ -104,7 +104,7 @@ def main
 
 	lexertemp.getStream.each do |token|
 		if token[:type] == "number"
-			print "[#{prfxo}#{token[:value]}#{pstfx}]"
+			print "#{prfxo}#{token[:value]}#{pstfx}"
 		else
 			print token[:value]
 		end
