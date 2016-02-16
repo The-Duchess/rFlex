@@ -45,10 +45,10 @@ class TokenLexer
 			if temp[:inputS].length >= 1 # token is empty and remaining input is not empty 
 				# error
 				#raise "\n\nUnconsumed Input:\n\n[#{temp[:inputS]}]\n\n"
-				return { :success => false, :inputS => temp[:inputS], :done => false, :error => true }
+				return { :success => false, :inputS => input, :done => false, :error => true }
 			else
 				# token is empty and input is not
-				return { :success => false, :inputS => temp[:inputS], :done => false, :error => false }
+				return { :success => false, :inputS => input, :done => false, :error => false }
 			end 
 		end
 	end
@@ -176,7 +176,7 @@ class LexicalAnalyzer
 
 		matched = false
 
-		until inputT.length == 1
+		until inputT.length == 0
 			tempLex = { :success => false, :inputS => inputT }
 			0.upto(len) do |i|
 				j = i

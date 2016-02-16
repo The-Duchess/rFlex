@@ -1,4 +1,3 @@
-whitespace {^\s+$}
-whitespac  {^\s+$}
-number     {^[1-9]\d*$}
-word       {^[a-zA-Z]+$}
+whitespace {^\s+}
+number     {^[1-9]\d*}
+word       {^[a-zA-Z]+}

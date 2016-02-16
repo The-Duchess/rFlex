@@ -1,18 +1,18 @@
-ignore     {[ \t\n]+}
-assignment {^=}
-terminal   {^;}
-openBrace  {^\{}
-closeBrace {^\}}
-def        {^def}
-openArg    {^\(}
-closeArg   {^\)}
-comma      {^,}
-PRINT      {^print}
-INT        {^int}
-int        {^\d+}
-comment    {^\/\*.*\*\/}
-add        {^\+}
-mul        {^\*}
-sub        {^\-}
-div        {^\/}
-identifier {^[a-zA-Z]\w*}
+ignore     {^[ \t\n]+$}
+assignment {^=$}
+terminal   {^;$}
+openBrace  {^\{$}
+closeBrace {^\}$}
+def        {^def$}
+openArg    {^\($}
+closeArg   {^\)$}
+comma      {^,$}
+PRINT      {^print$}
+INT        {^int$}
+int        {^[1-9]\d*$}
+comment    {^\/\*.*\*\/$}
+add        {^\+$}
+mul        {^\*$}
+sub        {^\-$}
+div        {^\/$}
+identifier {^[a-zA-Z]\w*$}

@@ -23,14 +23,78 @@ class TokenLexer
 
 	def lex input
 
-		if token = input.slice!(@regexp)
+		inputT = input
+		temp = self.sliceL(inputT)
+		token = ""
+		if temp == nil
+			raise "\n\nUnconsumed Input:\n\n[#{inputT}]\n\n"
+		else	
+			token = temp[:token]
+		end
+
+		if token.length >= 1
 			if @block != nil
 				analyze(token, @regexp, @type)
 			end
-			return true
+			if temp[:inputS].length == 0 # token is not empty and remaining input is empty
+				return { :success => true, :inputS => temp[:inputS], :done => true, :error => false }
+			else # token is not empty and remaining input is not empty
+				return { :success => true, :inputS => temp[:inputS], :done => false, :error => false }
+			end
+		else
+			if temp[:inputS].length >= 1 # token is empty and remaining input is not empty 
+				# error
+				#raise "\n\nUnconsumed Input:\n\n[#{temp[:inputS]}]\n\n"
+				return { :success => false, :inputS => input, :done => false, :error => true }
+			else
+				# token is empty and input is not
+				return { :success => false, :inputS => input, :done => false, :error => false }
+			end 
+		end
+	end
+
+	def sliceL input
+
+		# puts "\n\n"
+
+		if input == nil
+			return { :token => "", :input => input }
 		end
 
-		return false
+		len = input.length
+		ii = 0
+		temp = ""
+		curMatch = ""
+		matched = false
+		inputT = input
+
+		until ii == len do
+
+			temp.concat(input[ii])
+			# print "[#{input[ii]}]"
+			if temp.match(@regexp)
+				matched = true
+				curMatch = temp
+				ii += 1
+				if ii == len
+					inputT = inputT[(ii)..-1].to_s
+					return { :token => curMatch[0..-1], :inputS => inputT }
+				end
+				next
+			else
+				ii += 1
+				if matched
+					inputT = inputT[(ii - 1)..-1].to_s
+					return { :token => curMatch[0..-2], :inputS => inputT }
+				else
+					if ii == len
+						return { :token => "", :inputS => inputT }
+					else
+						next
+					end
+				end
+			end
+		end
 	end
 
 	def analyze token, regex, type
@@ -104,21 +168,31 @@ class LexicalAnalyzer
 			input.concat("#{line}")
 		end
 
-		input = input[0..-2].to_s
+		# input = input[0..-1].to_s
+		inputT = input
 
 		len = @lexers.length - 1
 		j = 0
 
 		matched = false
 
-		until input.length == 0
+		until inputT.length == 0
+			tempLex = { :success => false, :inputS => inputT }
 			0.upto(len) do |i|
-
-				if @lexers[i].lex(input)
-					matched = true
-				else
-				end
 				j = i
+				tempLex = @lexers[i].lex(inputT)
+
+				if tempLex[:success]
+					matched = tempLex[:success]
+					inputT = tempLex[:inputS]
+					if inputT.length == 0
+						break
+					end
+				else
+					matched = false
+				end
+
+				# j = i
 			end
 
 			# if we tried all options
@@ -126,9 +200,9 @@ class LexicalAnalyzer
 			# we didn't match
 			# and
 			# there is remaining input
-			if j == len and matched == false and input.length != 0
-				puts "\n\nUnconsumed Input:\n\n#{input}\n\n"
-				abort
+			## puts "j: #{j}, len: #{len}, matched: #{matched}, input: #{inputT}, length: #{inputT.length}, done: #{tempLex[:done]}, error: #{tempLex[:error]}"
+			if (j == len) and tempLex[:error]
+				raise "\n\nUnconsumed Input:\n\n\"#{inputT}\"\n\n"
 			end
 
 			matched = false
