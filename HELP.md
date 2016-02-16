@@ -8,7 +8,7 @@ the lexeme file has a syntax that looks like
 	word       {^[a-zA-Z]+$}
 	whitespace {^[ \n\t\s]+$}
 
-where a type is provided and the a regex that is in the perl/ruby format is provided in curly braces.
+where a type is provided and then a regex that is in the perl/ruby format is provided in curly braces.
 
 there is currently no inheriting previous regexes like with javacc or jflex.
 
