@@ -1,4 +1,4 @@
-require_relative 'rflex.rb'
+require 'rflex'
 
 def main
 	lexertemp = LexicalAnalyzer.new(ARGV[0].to_s, ARGV[1].to_s)
