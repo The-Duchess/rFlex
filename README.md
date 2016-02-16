@@ -1,9 +1,5 @@
 # rFlex
 
-additionally I have provided another lexer that demonstrates a lexical analyzer since the first one is having issues.
-
-to use it
-
 > ruby .\rubyLexer.rb file config
 
 and you will see a line of text with the numbers highlighted. this example requires the win32console gem for winodws prior to 10.
@@ -15,6 +11,8 @@ version 0.1.1
 # changelog
 
 0.1.1 and 0.1.2 fix an issue with unconsumed input
+
+0.1.3 fixes issues with unconsumed input; also example.rb has been updated along with the configrFlex
 
 # Library Documentation
 
