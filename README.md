@@ -1,16 +1,8 @@
 # rFlex
 
-> ruby .\rubyLexer.rb file config
-
-and you will see a line of text with the numbers highlighted. this example requires the win32console gem for winodws prior to 10.
-
 rFlex is a lexical analysis library built in ruby
 
-version 0.1.1
-
-> ruby .\example.rb file configrFlex
-
-and you will see a line of text with the numbers highlighted.
+version 0.1.3
 
 # changelog
 
@@ -60,6 +52,18 @@ or
 **Usage in demonstration**
 
 > ruby .\example.rb .\inputFile.txt .\regexpxFile.txt
+
+** other usage examples**
+
+requires the win32console gem for windows prior to 10.
+
+> ruby .\example.rb file configrFlex
+
+and you will see a line of text with the numbers highlighted.
+
+> ruby .\rubyLexer.rb file config
+
+and you will see a line of text with the numbers highlighted.
 
 **Demonstration**
 
