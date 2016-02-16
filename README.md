@@ -8,6 +8,10 @@ rFlex is a lexical analysis library built in ruby
 
 version 0.1.1
 
+> ruby .\example.rb file configrFlex
+
+and you will see a line of text with the numbers highlighted.
+
 # changelog
 
 0.1.1 and 0.1.2 fix an issue with unconsumed input
