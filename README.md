@@ -4,6 +4,8 @@ rFlex is a lexical analysis library built in ruby
 
 version 0.1.3
 
+for help see [HELP](https://github.com/The-Duchess/rFlex/blob/master/HELP.md)
+
 # changelog
 
 0.1.1 and 0.1.2 fix an issue with unconsumed input
