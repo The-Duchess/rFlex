@@ -55,7 +55,7 @@ class TokenLexer
 
 	def sliceL input
 
-		puts "\n\n"
+		# puts "\n\n"
 
 		if input == nil
 			return { :token => "", :input => input }
@@ -71,7 +71,7 @@ class TokenLexer
 		until ii == len do
 
 			temp.concat(input[ii])
-			print "[#{input[ii]}]"
+			# print "[#{input[ii]}]"
 			if temp.match(@regexp)
 				matched = true
 				curMatch = temp
@@ -200,7 +200,7 @@ class LexicalAnalyzer
 			# we didn't match
 			# and
 			# there is remaining input
-			#puts "j: #{j}, len: #{len}, matched: #{matched}, input: #{inputT}, length: #{inputT.length}, done: #{tempLex[:done]}, error: #{tempLex[:error]}"
+			## puts "j: #{j}, len: #{len}, matched: #{matched}, input: #{inputT}, length: #{inputT.length}, done: #{tempLex[:done]}, error: #{tempLex[:error]}"
 			if (j == len) and tempLex[:error]
 				raise "\n\nUnconsumed Input:\n\n\"#{inputT}\"\n\n"
 			end
