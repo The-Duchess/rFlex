@@ -1,7 +1,5 @@
 # **Docs**
 
-**Creating a Lexer**
-
 **Creating a lexeme file**
 
 the lexeme file has a syntax that looks like
@@ -13,6 +11,8 @@ the lexeme file has a syntax that looks like
 where a type is provided and the a regex that is in the perl/ruby format is provided in curly braces.
 
 there is currently no inheriting previous regexes like with javacc or jflex.
+
+**Creating a Lexer**
 
 ```ruby
 
