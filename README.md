@@ -51,35 +51,6 @@ or
 	lexer.lex
 ```
 
-**Usage in demonstration**
-
-> ruby .\example.rb .\inputFile.txt .\regexpxFile.txt
-
-**other usage examples**
-
-requires the win32console gem for windows prior to 10.
-
-> ruby .\example.rb file configrFlex
-
-and you will see a line of text with the numbers highlighted.
-
-> ruby .\rubyLexer.rb file config
-
-and you will see a line of text with the numbers highlighted.
-
-**Demonstration**
-
-![Alttext](http://i.imgur.com/5EIsmxM.png)
-
-**Example Input File**
-
-> [inputFile](https://github.com/The-Duchess/rFlex/blob/master/inputFile.txt)
-
-
-**Example Regexps File**
-
-> [regexpsFile](https://github.com/The-Duchess/rFlex/blob/master/regexpsFile.txt)
-
 
 # COPYING
 
